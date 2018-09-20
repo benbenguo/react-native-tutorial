@@ -18,9 +18,19 @@ class SessionOne extends Component {
         super(props);
     }
 
+    _onScrollEndDrag = e => {
+        console.log(e.nativeEvent.velocity.y);
+        // let velocity = e.nativeEvent.velocity.y;
+        // if(velocity == 0 || (isAndroid() && Math.abs(Math.round(velocity)) <= 2)) {
+        //   this.props.animation.handleIntermediateState(this.scrollToOffset);
+        // }
+    };
+
     render() {
         return (
-            <ScrollView>
+            <ScrollView 
+                onScrollEndDrag={ this._onScrollEndDrag }
+            >
                 <StatusBar 
                     hidden={false} 
                     backgroundColor={ styles.statusBar.backgroundColor }
@@ -76,6 +86,10 @@ class SessionOne extends Component {
 
                 {/* 自定义组件 */}
                 <Item />
+                <View style={{
+                    height: 500,
+                    backgroundColor: 'yellow',
+                }}></View>
             </ScrollView>
         );
     }

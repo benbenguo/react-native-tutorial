@@ -120,6 +120,7 @@ class SessionTwo extends Component {
                         height: 60,
                     }}
                     showred={ number > 5 ? true : false } />
+                
             </View>
             
         );
